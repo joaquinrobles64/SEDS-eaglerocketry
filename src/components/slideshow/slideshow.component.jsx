@@ -2,35 +2,26 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 
 import "./slideshow.style.scss";
+import SLIDESHOW_DATA from "./slideshow.data";
 
 class SlideShow extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      sections: [
-        {
-          imageUrl: "/images/img1.jpg",
-        },
-        {
-          imageUrl: "/images/img2.jpg",
-        },
-        {
-          imageUrl: "/images/img3.jpg",
-        },
-      ],
+      sections: SLIDESHOW_DATA,
     };
   }
 
   render() {
     return (
-      <Carousel >
-        {this.state.sections.map(({ imageUrl }) => (
+      <Carousel>
+        {this.state.sections.map(({ imageUrl, title, desc }) => (
           <Carousel.Item>
             <img alt="" src={imageUrl} className="sauce"></img>
             <Carousel.Caption>
-              <h1>WELCOME</h1>
-              <h3>where next generation engineers are born</h3>
+              <h3>{title}</h3>
+              <p>{desc}</p>
             </Carousel.Caption>
           </Carousel.Item>
         ))}

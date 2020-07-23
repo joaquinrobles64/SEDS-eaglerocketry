@@ -1,10 +1,23 @@
-.join{
-    margin: 40px auto;
-    padding: 0px 90px;
+.join {
+  margin: 40px auto;
+  padding: 0px 140px;
+}
+.google-maps{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
-@media(max-width: 1150px){
-    .map{
-        width: 425px;
-    }
+@media (max-width: 1150px) {
+  .map {
+    width: 425px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .map {
+    width: 425px;
+  }
 }

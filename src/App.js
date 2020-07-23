@@ -3,7 +3,7 @@ import "./App.css";
 
 import { Route, Switch } from "react-router-dom";
 import Header from "./components/header/header.component";
-
+import Footer from "./components/footer/footer.component";
 import HomePage from "./pages/homepage/homepage.page";
 import SponsorsPage from "./pages/sponsors/sponsors.page";
 
@@ -16,6 +16,7 @@ class App extends React.Component {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/sponsors" component={SponsorsPage} />
         </Switch>
+        <Footer />
       </div>
     );
   }

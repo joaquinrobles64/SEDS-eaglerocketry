@@ -1,0 +1,16 @@
+.footer {
+  overflow: hidden;
+  padding: 80px 40px;
+
+  .socials {
+    font-size: 30px;
+    letter-spacing: 20px;
+    a:hover,
+    a:visited,
+    a:link,
+    a:active {
+      color: black;
+      text-decoration: none;
+    }
+  }
+}

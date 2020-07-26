@@ -19,7 +19,7 @@ const Header = () => (
         <Nav.Link href="/sponsors">SPONSORS</Nav.Link>
       </Nav>
       <Nav className="ml-auto">
-        <Nav.Link href="#SIGN IN">SIGN IN</Nav.Link>
+        <Nav.Link href="/SIGNIN">SIGN IN</Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Navbar>

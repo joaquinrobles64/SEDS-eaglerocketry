@@ -1,23 +1,68 @@
-.join {
-  margin: 40px auto;
-  padding: 0px 140px;
-}
-.google-maps{
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+.card-title {
+  font-family: "Rowdies", cursive;
 }
 
-@media (max-width: 1150px) {
-  .map {
-    width: 425px;
+.join {
+  margin: 40px auto;
+  padding: 0px 3em;
+}
+.google-maps {
+  width: 600px;
+  height: 350px;
+}
+
+@media (max-width: 1300px){
+  .google-maps{
+    width: 550px;
+    height: 450px;
   }
 }
 
-@media (max-width: 1150px) {
-  .map {
-    width: 425px;
+@media (max-width: 1200px){
+  .google-maps{
+    width: 450px;
+    height: 550px;
+  }
+}
+
+@media (max-width: 1100px){
+  .google-maps{
+    width: 400px;
+    height: 550px;
+  }
+}
+
+@media (max-width: 995px){
+  .google-maps{
+    width: 650px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 880px){
+  .google-maps{
+    width: 550px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 780px){
+  .google-maps{
+    width: 450px;
+    height: 350px;
+  }
+}
+
+
+@media (max-width: 670px){
+  .google-maps{
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 570px){
+  .google-maps{
+    width: 300px;
   }
 }

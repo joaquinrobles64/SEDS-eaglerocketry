@@ -8,7 +8,7 @@ import "./team.style.scss";
 
 
 const TeamPage = () => (
-  <div className="teampage">
+  <div className="team-page">
     <CardDeck>
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src="/images/timothylimothy.jpg" />

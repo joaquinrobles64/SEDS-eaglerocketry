@@ -3,8 +3,10 @@ import React from "react";
 import "./sponsors.style.scss";
 
 const SponsorsPage = () => (
-    <div className="sponsorspage">
-        <h1>hello world</h1>
+    <div className="sponsors-page">
+        <div className="text-center">
+            <h1>THANK YOU</h1>
+        </div>
     </div>
 )
 

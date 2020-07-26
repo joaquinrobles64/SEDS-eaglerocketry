@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 import "./homepage.style.scss";
 
 const HomePage = () => (
-  <div className="homepage">
+  <div className="home-page">
     <SlideShow />
 
     <div className="join">

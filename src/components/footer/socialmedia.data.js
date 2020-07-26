@@ -12,7 +12,7 @@ const SOCIALMEDIA_DATA = [
         link: "https://www.linkedin.com/company/eagle-rocketry",
     },
     {
-        className: "fab-fa-github",
+        className: "fab fa-github",
         link: "https://github.com/pgatsby/SEDS-eaglerocketry",
     },
 ]

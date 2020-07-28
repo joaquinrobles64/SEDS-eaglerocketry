@@ -1,5 +1,6 @@
 .card-title {
   font-family: "Rowdies", cursive;
+  font-size: 2em !important;
 }
 
 .join {
@@ -64,5 +65,10 @@
 @media (max-width: 570px){
   .google-maps{
     width: 300px;
+  }
+}
+@media (max-width: 400px){
+  .google-maps{
+    width: 200px;
   }
 }

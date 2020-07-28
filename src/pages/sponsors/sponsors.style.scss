@@ -1,6 +1,15 @@
 .sponsors-page {
   h1 {
-    font-family: 'Rowdies', cursive;
+    font-family: "Rowdies", cursive;
     font-size: 110px;
   }
+
+  .sponsors {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 50px 100px;
+    align-items: baseline;
+  }
+  
 }

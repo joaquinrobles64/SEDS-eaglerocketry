@@ -3,6 +3,10 @@ const SOCIALMEDIA_DATA = [
         className: "fab fa-twitter", 
         link: "https://twitter.com/eaglerocketry",
     },
+    {
+        className: "fab fa-instagram-square", 
+        link: "https://www.instagram.com/csularocketry/",
+    },
     {   
         className:"fab fa-facebook",
         link: "https://www.facebook.com/csularocketry/",

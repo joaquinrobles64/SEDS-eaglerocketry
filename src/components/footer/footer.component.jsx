@@ -5,7 +5,6 @@ import SOCIALMEDIA_DATA from "./socialmedia.data";
 
 import "./footer.style.scss";
 
-
 class Footer extends React.Component {
   constructor() {
     super();

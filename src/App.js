@@ -7,7 +7,7 @@ import Footer from "./components/footer/footer.component";
 import HomePage from "./pages/homepage/homepage.page";
 import SponsorsPage from "./pages/sponsors/sponsors.page";
 import TeamPage from "./pages/team/team.page";
-import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.page'
+import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.page";
 
 class App extends React.Component {
   render() {

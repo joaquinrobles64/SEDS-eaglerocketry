@@ -17,12 +17,13 @@ class TeamPage extends React.Component {
     const { team } = this.state;
     return (
       <div className="team-page">
+        <div className="team">Meet the team</div>
         <TeamCardList>
           {this.state.team.map((member) => (
             <div key={member.id}>
-              <img src={member.imageUrl} alt="" />
-              <h1> {member.name} </h1>
-              <h3>{member.position}</h3>
+              <img src={member.imageUrl} alt="" className="cropper" />
+              <h3> {member.name} </h3>
+              <h4>{member.position}</h4>
             </div>
           ))}
         </TeamCardList>

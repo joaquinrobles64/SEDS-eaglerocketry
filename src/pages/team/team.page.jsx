@@ -1,28 +1,35 @@
 import React from "react";
 
-import CardDeck from "react-bootstrap/CardDeck"
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-
 import "./team.style.scss";
+import TEAM_DATA from "./team.data";
 
+import { TeamCardList } from "../../components/team-card-list/team-card-list.component";
+class TeamPage extends React.Component {
+  constructor(props) {
+    super(props);
 
-const TeamPage = () => (
-  <div className="team-page">
-    <CardDeck>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src="/images/timothylimothy.jpg" />
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-    </CardDeck>
-  </div>
-);
+    this.state = {
+      team: TEAM_DATA,
+    };
+  }
+
+  render() {
+    const { team } = this.state;
+    return (
+      <div className="team-page">
+        <div className="team">Meet the team</div>
+        <TeamCardList>
+          {this.state.team.map((member) => (
+            <div key={member.id}>
+              <img src={member.imageUrl} alt="" className="cropper" />
+              <h3> {member.name} </h3>
+              <h4>{member.position}</h4>
+            </div>
+          ))}
+        </TeamCardList>
+      </div>
+    );
+  }
+}
 
 export default TeamPage;

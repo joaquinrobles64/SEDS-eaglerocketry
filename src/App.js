@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import "./App.css";
 
@@ -17,11 +17,14 @@ import { selectCurrentUser } from "./redux/user/user.selector";
 
 class App extends React.Component {
   unSubscribeFromAuth = null;
+  
 
   componentDidMount() {
     const { setCurrentUser } = this.props;
 
     this.unSubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      console.log(userAuth)
+      
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
@@ -40,6 +43,7 @@ class App extends React.Component {
     this.unSubscribeFromAuth();
   }
 
+
   render() {
     return (
       <div>
@@ -48,7 +52,13 @@ class App extends React.Component {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/sponsors" component={SponsorsPage} />
           <Route exact path="/team" component={TeamPage} />
-          <Route exact path="/signin" component={SignInAndSignUpPage} />
+          <Route
+            exact
+            path="/signin"
+            render={() =>
+              this.props.currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage/>
+            }
+          />
         </Switch>
         <Footer />
       </div>

@@ -25,11 +25,9 @@ const Header = ({ currentUser }) => (
         <Nav.Link href="/sponsors">SPONSORS</Nav.Link>
       </Nav>
       <Nav className="ml-auto">
+        {currentUser ? <Nav.Link href="/myaccount">MY ACCOUNT</Nav.Link> : null}
         {currentUser ? (
-          <div>
-            <Nav.Link>{currentUser.displayName}</Nav.Link>
-            <Nav.Link onClick={() => auth.signOut()}>SIGN OUT</Nav.Link>
-          </div>
+          <Nav.Link onClick={() => auth.signOut()}>SIGN OUT</Nav.Link>
         ) : (
           <Nav.Link href="/signin">SIGN IN</Nav.Link>
         )}

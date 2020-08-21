@@ -8,6 +8,7 @@ import Footer from "./components/footer/footer.component";
 import HomePage from "./pages/homepage/homepage.page";
 import SponsorsPage from "./pages/sponsors/sponsors.page";
 import TeamPage from "./pages/team/team.page";
+import AccountPage from "./pages/myaccount/myaccount.page";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.page";
 
 import { auth, createUserProfileDocument } from "./firebase/firebase.util";
@@ -17,14 +18,11 @@ import { selectCurrentUser } from "./redux/user/user.selector";
 
 class App extends React.Component {
   unSubscribeFromAuth = null;
-  
 
   componentDidMount() {
     const { setCurrentUser } = this.props;
 
     this.unSubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
-      console.log(userAuth)
-      
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
@@ -43,7 +41,6 @@ class App extends React.Component {
     this.unSubscribeFromAuth();
   }
 
-
   render() {
     return (
       <div>
@@ -54,9 +51,24 @@ class App extends React.Component {
           <Route exact path="/team" component={TeamPage} />
           <Route
             exact
+            path="/myaccount"
+            render={() =>
+              this.props.currentUser ? (
+                <AccountPage />
+              ) : (
+                <Redirect to="/signin" />
+              )
+            }
+          />
+          <Route
+            exact
             path="/signin"
             render={() =>
-              this.props.currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage/>
+              this.props.currentUser ? (
+                <Redirect to="/" />
+              ) : (
+                <SignInAndSignUpPage />
+              )
             }
           />
         </Switch>

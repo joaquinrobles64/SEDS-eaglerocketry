@@ -27,6 +27,7 @@ class Footer extends React.Component {
           </div>
           <br></br>
           <Logo className="logo" />
+          <img className="logo" src="/images/seds.png" alt="seds logo"/>
         </div>
       </div>
     );

@@ -36,7 +36,7 @@ class AccountPage extends React.Component {
 
     const { displayName, gradYear, position, linkedinUrl } = this.state;
 
-    const user = await auth.currentUser;
+    const user = auth.currentUser;
 
     if (user) {
       try {
@@ -49,9 +49,8 @@ class AccountPage extends React.Component {
       } catch (error) {
         console.log(error);
       }
+      window.location.reload();
     }
-
-
   };
 
   handleChange = (event) => {

@@ -55,6 +55,7 @@ class UpdateInfo extends React.Component {
           subTeam,
           linkedinUrl,
         });
+        alert("successfully update");
       } catch (error) {
         console.log(error);
       }
@@ -64,10 +65,7 @@ class UpdateInfo extends React.Component {
   };
 
   handleChange = (event) => {
-    console.log(event.target.value);
-    console.log(event.target.name);
     const { value, name } = event.target;
-
     this.setState({ [name]: value });
   };
 

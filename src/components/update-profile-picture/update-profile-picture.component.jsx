@@ -31,6 +31,8 @@ class UpdateProfilePicture extends React.Component {
         this.setState = {
           profileImage: null,
         };
+        alert("successfully update");
+        window.location.reload();
       } catch (error) {
         console.log(error);
       }

@@ -15,7 +15,7 @@ class UpdateProfilePicture extends React.Component {
     this.state = {
       profileImage: null,
       displayName: this.props.currentUser.displayName,
-      userProfileImage: this.props.currentUser.imageUrl,
+      photoURL: this.props.currentUser.photoURL,
     };
   }
 
@@ -31,8 +31,8 @@ class UpdateProfilePicture extends React.Component {
         this.setState = {
           profileImage: null,
         };
-        alert("successfully update");
         window.location.reload();
+        alert("successfully update");
       } catch (error) {
         console.log(error);
       }
@@ -55,8 +55,8 @@ class UpdateProfilePicture extends React.Component {
             class="profile-picture"
             alt="Eagle Rocketry SEDS Logo"
             src={
-              this.state.userProfileImage
-                ? this.state.userProfileImage
+              this.state.photoURL
+                ? this.state.photoURL
                 : "/images/eagle-rocketry.png"
             }
           />

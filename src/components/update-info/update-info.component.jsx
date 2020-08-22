@@ -26,8 +26,8 @@ class UpdateInfo extends React.Component {
       subTeam: this.props.currentUser.subTeam
         ? this.props.currentUser.subTeam
         : "",
-      linkedinUrl: this.props.currentUser.linkedinUrl
-        ? this.props.currentUser.linkedinUrl
+      linkedinURL: this.props.currentUser.linkedinURL
+        ? this.props.currentUser.linkedinURL
         : "",
     };
   }
@@ -43,7 +43,7 @@ class UpdateInfo extends React.Component {
       gradYear,
       position,
       subTeam,
-      linkedinUrl,
+      linkedinURL,
     } = this.state;
 
     if (user && isVerified) {
@@ -53,7 +53,7 @@ class UpdateInfo extends React.Component {
           gradYear,
           position,
           subTeam,
-          linkedinUrl,
+          linkedinURL,
         });
         alert("successfully update");
       } catch (error) {
@@ -112,10 +112,10 @@ class UpdateInfo extends React.Component {
           </select>
           <FormInput
             type="url"
-            name="linkedinUrl"
-            value={this.state.linkedinUrl}
+            name="linkedinURL"
+            value={this.state.linkedinURL}
             handleChange={this.handleChange}
-            label="Linkedin Url"
+            label="Linkedin URL"
           />
           <div className="buttons">
             <CustomButton type="submit" inverted>

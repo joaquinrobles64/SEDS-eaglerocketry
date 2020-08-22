@@ -1,4 +1,5 @@
 import firebase from "firebase/app";
+import "firebase/database";
 import "firebase/firestore";
 import "firebase/auth";
 import "firebase/storage";
@@ -74,8 +75,8 @@ export const updateUserProfilePicture = async (userAuth, file) => {
 
     await storageRef.put(file);
 
-    const imageUrl = await storageRef.getDownloadURL();
-    await updateUserProfileDocument(userAuth, { imageUrl: imageUrl });
+    const photoURL = await storageRef.getDownloadURL();
+    await updateUserProfileDocument(userAuth, { photoURL: photoURL });
   } catch (error) {
     console.log("error updating user profile picture", error.message);
   }

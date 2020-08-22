@@ -1,9 +1,14 @@
-.my-account{
-    width: 850px;
-    text-align: center;
-    margin: 30px auto;
+.my-account {
+  width: 850px;
+  margin: 30px auto;
 
-    .title{
-        margin: 10px 0;
-    }
+  .title {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .container{
+      display: flex;
+      justify-content: space-around;
+  }
 }

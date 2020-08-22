@@ -1,0 +1,25 @@
+.update-profile-picture {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 400px;
+  .profile-picture-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    .profile-picture {
+      max-width: 200px;
+      max-height: 200px;
+    }
+  }
+  .upload-form{
+      align-self: center;
+      max-width: 200px;
+  }
+
+  .custom-button{
+      margin-top: 20px;
+  }
+}

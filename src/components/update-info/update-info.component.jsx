@@ -13,8 +13,6 @@ class UpdateInfo extends React.Component {
   constructor(props) {
     super(props);
 
-    this.displayName = this.props.currentUser.displayName;
-
     this.state = {
       displayName: this.props.currentUser.displayName
         ? this.props.currentUser.displayName
@@ -36,7 +34,9 @@ class UpdateInfo extends React.Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    var isVerified = this.props.currentUser.isVerified;
+
+    const isVerified = this.props.currentUser.isVerified;
+    const user = auth.currentUser;
 
     const {
       displayName,
@@ -45,8 +45,6 @@ class UpdateInfo extends React.Component {
       subTeam,
       linkedinUrl,
     } = this.state;
-
-    const user = auth.currentUser;
 
     if (user && isVerified) {
       try {
@@ -98,7 +96,9 @@ class UpdateInfo extends React.Component {
             handleChange={this.handleChange}
             label="Position"
           />
-          <label className="sub-team-title" for="subTeam">Choose your Sub-Team: </label>
+          <label className="sub-team-title" for="subTeam">
+            Choose your Sub-Team:{" "}
+          </label>
           <select
             name="subTeam"
             className="sub-team"

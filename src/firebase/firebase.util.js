@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+import "firebase/storage";
 
 const config = {
   apiKey: "AIzaSyC3-MH34RHs285611VjBuTO2sCH9Bfgh2Y",
@@ -42,7 +43,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
-export const updateUserProfileDocument = async (userAuth, additionalData) => {
+export const updateUserProfileDocument = async (userAuth, userInfo) => {
   if (!userAuth) return;
   const userRef = firestore.doc(`users/${userAuth.uid}`);
 
@@ -53,7 +54,7 @@ export const updateUserProfileDocument = async (userAuth, additionalData) => {
     try {
       await userRef.update({
         updateAt,
-        ...additionalData,
+        ...userInfo,
       });
     } catch (error) {
       console.log("error updating user", error.message);
@@ -61,10 +62,30 @@ export const updateUserProfileDocument = async (userAuth, additionalData) => {
   }
 };
 
+export const updateUserProfilePicture = async (userAuth, file) => {
+  if (!userAuth) return;
+
+  try {
+    const fileType = file.name.split(".").pop();
+
+    const storageRef = firebase
+      .storage()
+      .ref(`${userAuth.uid}/profilepicture/image.` + fileType);
+
+    await storageRef.put(file);
+
+    const imageUrl = await storageRef.getDownloadURL();
+    await updateUserProfileDocument(userAuth, { imageUrl: imageUrl });
+  } catch (error) {
+    console.log("error updating user profile picture", error.message);
+  }
+};
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
+export const storage = firebase.storage();
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });

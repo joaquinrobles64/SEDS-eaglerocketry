@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./team.style.scss";
-import TEAM_DATA from "./team.data";
+import { userCollection as TEAM_DATA } from "../../firebase/firebase.util";
 
 import { TeamCardList } from "../../components/team-card-list/team-card-list.component";
 class TeamPage extends React.Component {
@@ -14,16 +14,17 @@ class TeamPage extends React.Component {
   }
 
   render() {
-    const { team } = this.state;
     return (
       <div className="team-page">
-        <div className="team">Meet the team</div>
+        <div className="team">Meet The Team</div>
         <TeamCardList>
           {this.state.team.map((member) => (
             <div key={member.id}>
-              <img src={member.imageUrl} alt="" className="cropper" />
-              <h3> {member.name} </h3>
-              <h4>{member.position}</h4>
+              <img src={member.photoURL} alt="" className="cropper" />
+              <div className="text-center">
+                <h3> {member.displayName} </h3>
+                <h4>{member.position}</h4>
+              </div>
             </div>
           ))}
         </TeamCardList>

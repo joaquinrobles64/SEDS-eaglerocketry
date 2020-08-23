@@ -15,6 +15,8 @@ const config = {
   measurementId: "G-2BY00SJ45R",
 };
 
+// methods to handle user creation and updates
+
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
@@ -84,14 +86,20 @@ export const updateUserProfilePicture = async (userAuth, file) => {
 
 firebase.initializeApp(config);
 
-// this works!!! :D
+//gets user collection
+
+export const userCollection = [];
 
 const userCollectionRef = firebase.firestore().collection("users");
-userCollectionRef.onSnapshot(users => {
-  users.forEach(e => {
-    console.log(e.data());
-  })
-})
+userCollectionRef.onSnapshot((users) => {
+  users.forEach((user) => {
+    if (user.data().isVerified) {
+      userCollection.push(user.data());
+    }
+  });
+});
+
+// exporting some defaults 
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();

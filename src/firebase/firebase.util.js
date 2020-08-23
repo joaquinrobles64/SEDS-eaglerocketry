@@ -84,6 +84,15 @@ export const updateUserProfilePicture = async (userAuth, file) => {
 
 firebase.initializeApp(config);
 
+// this works!!! :D
+
+const userCollectionRef = firebase.firestore().collection("users");
+userCollectionRef.onSnapshot(users => {
+  users.forEach(e => {
+    console.log(e.data());
+  })
+})
+
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 export const storage = firebase.storage();

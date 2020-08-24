@@ -1,5 +1,5 @@
 import React from "react";
-import "./team-card.style.scss";
+import "./team-card.style.scss?v=0.0.1";
 
 const TeamCard = ({ photoURL, displayName, position }) => (
   <div className="team-card">

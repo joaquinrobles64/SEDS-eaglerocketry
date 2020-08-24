@@ -4,9 +4,10 @@
   align-items: center;
   width: 300px;
   .profile-photo {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border: 2px solid black;
+    border-radius: 50%;
   }
   .profile-desc {
     display: flex;

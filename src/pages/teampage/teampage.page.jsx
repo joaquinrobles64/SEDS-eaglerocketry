@@ -31,7 +31,7 @@ class TeamPage extends React.Component {
   render() {
     return (
       <div className="team-page">
-        <h1 className="text-center">Meet The Team</h1>
+        <h1 className="text-center">Meet the Team</h1>
         <div className="team-members">
           {this.state.team.map((member) => (
             <TeamCard

@@ -15,17 +15,19 @@ class SlideShow extends React.Component {
 
   render() {
     return (
-      <Carousel>
-        {this.state.sections.map(({ imageUrl, title, desc }) => (
-          <Carousel.Item>
-            <img alt="" src={imageUrl} className="sauce"></img>
-            <Carousel.Caption>
-              <h3>{title}</h3>
-              <p>{desc}</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+      <div className="carousel-container">
+        <Carousel>
+          {this.state.sections.map(({ imageUrl, title, desc }) => (
+            <Carousel.Item>
+              <img alt="" src={imageUrl} className="sauce"></img>
+              <Carousel.Caption>
+                <h3>{title}</h3>
+                <p>{desc}</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </div>
     );
   }
 }

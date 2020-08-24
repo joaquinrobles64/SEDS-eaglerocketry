@@ -70,7 +70,7 @@ class UpdateProfilePicture extends React.Component {
             accept="image/png, image/jpeg"
             onChange={this.handleChange}
           />
-          <span>recommended to upload 400x400</span>
+          <span>recommended to upload 400x400 image</span>
           <CustomButton onClick={this.handleUpload} inverted>
             UPLOAD
           </CustomButton>

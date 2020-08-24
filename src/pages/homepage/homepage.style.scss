@@ -2,26 +2,26 @@
   width: 100%;
   margin: 40px 0;
   padding: 0px 3em;
+}
 
-  .card-title {
-    font-size: 2em !important;
-  }
+.card-title {
+  font-size: 2em !important;
+}
 
-  .google-maps {
-    width: 600px;
-    height: 350px;
-  }
+.about-us-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .about-us-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.google-maps {
+  width: 600px;
+  height: 350px;
 }
 
 @media (max-width: 1300px) {
   .google-maps {
-    width: 550px;
+    width: 200px;
     height: 450px;
   }
 }

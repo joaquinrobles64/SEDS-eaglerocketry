@@ -1,18 +1,23 @@
 const SLIDESHOW_DATA = [
   {
-    imageUrl: "/images/img1.jpg",
-    title: "TEAMWORK",
-    desc: "work with others and make connections",
+    imageUrl: "/images/weare.jpg",
+    title: "THE BEST",
+    desc: "we are the best organization at Cal State LA",
   },
   {
-    imageUrl: "/images/img2.jpg",
+    imageUrl: "/images/design.jpg",
+    title: "DESIGN",
+    desc: "learn how to plan and design the Eagle Rocket using solid works",
+  },
+  {
+    imageUrl: "/images/engineer.jpg",
     title: "ENGINEER",
     desc: "apply classroom taught subjects to plan, bulild, and test",
   },
   {
-    imageUrl: "/images/img3.jpg",
-    title: "DESIGN",
-    desc: "learn how to design the Eagle Rocket using solid works",
+    imageUrl: "/images/deploy.jpg",
+    title: "DEPLOY",
+    desc: "compete with other student rocketry teams from all over the country and around the world for the Spaceport America Cup",
   },
 ];
 

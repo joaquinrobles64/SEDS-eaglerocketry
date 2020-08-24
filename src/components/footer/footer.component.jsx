@@ -20,7 +20,7 @@ class Footer extends React.Component {
         <div className="text-center">
           <div className="socials">
             {this.state.socialmedia.map(({ className, link }) => (
-              <a href={link}>
+              <a href={link} target="_blank" rel="noopener noreferrer">
                 <i className={className}> </i>
               </a>
             ))}

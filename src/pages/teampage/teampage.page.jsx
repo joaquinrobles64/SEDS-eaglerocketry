@@ -38,6 +38,8 @@ class TeamPage extends React.Component {
               photoURL={member.photoURL}
               displayName={member.displayName}
               position={member.position}
+              linkedinURL={member.linkedinURL}
+              gradYear={member.gradYear}
             />
           ))}
         </div>

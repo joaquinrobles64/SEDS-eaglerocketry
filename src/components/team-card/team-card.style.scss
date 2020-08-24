@@ -14,4 +14,13 @@
     align-items: center;
     font-size: 20px;
   }
+  .links {
+    color: black;
+    text-decoration: none;
+    &:hover {
+      cursor: pointer;
+      color: #ffc53d !important;
+      transition: 0.5s;
+    }
+  }
 }

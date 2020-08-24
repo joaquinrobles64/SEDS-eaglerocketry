@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "../../redux/user/user.selector";
@@ -19,17 +20,33 @@ const Header = ({ currentUser }) => (
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
       <Nav className="pl-md-4">
-        <Nav.Link href="/">HOME</Nav.Link>
-        <Nav.Link href="/outreach">OUTREACH</Nav.Link>
-        <Nav.Link href="/team">TEAM</Nav.Link>
-        <Nav.Link href="/sponsors">SPONSORS</Nav.Link>
+        <Link to="/" className="nav-link">
+          HOME
+        </Link>
+        <Link to="/outreach" className="nav-link">
+          OUTREACH
+        </Link>
+        <Link to="/team" className="nav-link">
+          TEAM
+        </Link>
+        <Link to="/sponsors" className="nav-link">
+          SPONSORS
+        </Link>
       </Nav>
       <Nav className="ml-auto">
-        {currentUser ? <Nav.Link href="/myaccount">MY ACCOUNT</Nav.Link> : null}
         {currentUser ? (
-          <Nav.Link onClick={() => auth.signOut()}>SIGN OUT</Nav.Link>
+          <Link to="/myaccount" className="nav-link">
+            MY ACCOUNT
+          </Link>
+        ) : null}
+        {currentUser ? (
+          <div className="nav-link" onClick={() => auth.signOut()}>
+            SIGN OUT <i class="fas fa-sign-out"></i>
+          </div>
         ) : (
-          <Nav.Link href="/signin">SIGN IN</Nav.Link>
+          <Link to="/signin" className="nav-link">
+            SIGN IN <i class="fas fa-sign-in"></i>
+          </Link>
         )}
       </Nav>
     </Navbar.Collapse>

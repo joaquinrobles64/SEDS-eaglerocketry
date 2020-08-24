@@ -22,7 +22,7 @@ const TeamCard = ({
           <div className="graduation-year">Graduating {gradYear}</div>
         ) : null}
         {linkedinURL ? (
-          <a href={linkedinURL} className="linkedin links" target="_blank">
+          <a href={linkedinURL} className="linkedin links" target="_blank" rel="noopener noreferrer">
             Visit Profile <i class="fab fa-linkedin"></i>
           </a>
         ) : null}

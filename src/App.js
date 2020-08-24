@@ -7,7 +7,7 @@ import Header from "./components/header/header.component";
 import Footer from "./components/footer/footer.component";
 import HomePage from "./pages/homepage/homepage.page";
 import SponsorsPage from "./pages/sponsors/sponsors.page";
-import TeamPage from "./pages/team/team.page";
+import TeamPage from "./pages/teampage/teampage.page";
 import AccountPage from "./pages/myaccount/myaccount.page";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.page";
 
